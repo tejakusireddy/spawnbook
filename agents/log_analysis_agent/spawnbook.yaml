@@ -1,0 +1,33 @@
+name: log-analysis-agent
+version: "0.1.0"
+description: >
+  Analyzes application logs to identify root causes, error patterns,
+  and anomalies. Returns structured root cause analysis with severity
+  and recommended remediation steps.
+author: spawnbook
+
+capabilities:
+  - slug: log-analysis
+    label: Log Analysis
+    description: Analyze application logs to identify root causes and anomalies
+    version: 1
+
+pricing:
+  credits_per_run: 50
+
+runtime:
+  entrypoint: agents/log_analysis_agent/agent.py
+  handler: execute
+  timeout_seconds: 30
+
+env:
+  required: []
+  optional:
+    - LOG_LEVEL
+
+tags:
+  - observability
+  - devops
+  - incident-response
+
+license: MIT
