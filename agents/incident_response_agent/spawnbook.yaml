@@ -1,0 +1,33 @@
+name: incident-response-agent
+version: "0.1.0"
+description: >
+  Coordinates responses to production incidents by hiring specialized
+  agents for analysis and taking automated remediation actions based
+  on severity assessment.
+author: spawnbook
+
+capabilities:
+  - slug: incident-response
+    label: Incident Response
+    description: Coordinate responses to production incidents and outages
+    version: 1
+
+pricing:
+  credits_per_run: 75
+
+runtime:
+  entrypoint: agents/incident_response_agent/agent.py
+  handler: handle_incident
+  timeout_seconds: 60
+
+env:
+  required: []
+  optional:
+    - LOG_LEVEL
+
+tags:
+  - observability
+  - devops
+  - incident-response
+
+license: MIT
